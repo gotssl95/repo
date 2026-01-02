@@ -1,14 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Web Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixelated Personal Page</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  body {
+    background-color: #1a1a1a;
+    color: #00ff00;
+    text-align: center;
+    padding: 50px 20px;
+    image-rendering: pixelated;
+    line-height: 1.8;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px #ff0000;
+  }
+
+  p {
+    font-size: 0.8em;
+    margin-bottom: 50px;
+  }
+
+  section {
+    margin-top: 60px;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px #ff0000;
+  }
+
+  .project-button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 15px;
+    border: 2px solid #00ff00;
+    background-color: #000;
+    color: #00ff00;
+    text-decoration: none;
+    transition: 0.2s;
+    cursor: pointer;
+    font-size: 0.7em;
+  }
+
+  .project-button:hover {
+    background-color: #00ff00;
+    color: #000;
+  }
+
+  .stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  @keyframes twinkle {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+  }
+</style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    
-    <p>Hello i am A simple programmer that do develop simple operating systems with assembly and C. just visit 
-    <a href="https://www.youtube.com/@programfiles86">Youtube Channel</a></p>
+  <h1>Hey There, I'm GotSSL</h1>
+  <p>I'm just a 19 year old developer, creating small projects for fun</p>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Here are some projects i'm working on:</p>
+    <a class="project-button" href="https://github.com/gotssl95/GotSSL-Kernel" target="_blank">GotSSL OS</a>
+    <a class="project-button" href="https://github.com/" target="_blank">...</a>
+    <a class="project-button" href="https://github.com/" target="_blank">...</a>
+  </section>
+
+  <canvas class="stars"></canvas>
+
+<script>
+  // Pixel star animation
+  const canvas = document.querySelector('.stars');
+  const ctx = canvas.getContext('2d');
+  let starsArray = [];
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+
+  function createStars(num) {
+    starsArray = [];
+    for(let i = 0; i < num; i++) {
+      starsArray.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        size: Math.random() * 2 + 1,
+        speed: Math.random() * 0.5 + 0.2
+      });
+    }
+  }
+
+  function animateStars() {
+    ctx.clearRect(0,0,width,height);
+    for(let star of starsArray) {
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(star.x, star.y, star.size, star.size);
+      star.y += star.speed;
+      if(star.y > height) star.y = 0;
+    }
+    requestAnimationFrame(animateStars);
+  }
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+    createStars(200);
+  });
+
+  createStars(200);
+  animateStars();
+</script>
 </body>
 </html>
