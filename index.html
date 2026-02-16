@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GotSSL — Developer</title>
+<meta name="theme-color" content="#0e0e10">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg: #0e0e10;
+            --card: #151518;
+            --text: #f5f5f7;
+            --muted: #9a9aa1;
+            --accent: #4da6ff;
+            --border: #222228;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        nav {
+            margin-top: 25px;
+        }
+
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        p {
+            color: var(--muted);
+        }
+
+        .projects {
+            display: grid;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .card p {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GotSSL</h1>
+        <p class="subtitle">Developer • Designer • Animator</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#work">Works</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I'm a passionate developer focused on building clean, efficient, and minimal systems.
+            I enjoy low-level programming, security research, and crafting simple yet powerful user experiences.
+            My goal is to create tools that are lightweight, secure, and beautifully designed.
+        </p>
+    </section>
+    <section id="work">
+        <h2>Selected Works</h2>
+        <div class="projects">
+            <div class="card">
+                <h3>GSSL Kernel</h3>
+                <p>
+                    A lightweight x86 kernel written in assembly,
+                    built for learning operating system internals and low-level architecture.
+                </p>
+                <a href="#">View on GitHub →</a>
+            </div>
+            <div class="card">
+                <h3>Sync</h3>
+                <p>
+                    A private and secure messaging application focused on simplicity,
+                    speed, and end-to-end encrypted communication.
+                </p>
+                <a href="#">Coming Soon →</a>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Email: gotssl@mail.ru</p>
+        <p>GitHub: <a href="https://github.com/gotssl95" target="_blank">github.com/gotssl95</a></p>
+    </section>
+    <footer>
+        © 2026 — GotSSL
+    </footer>
+</body>
+</html>
